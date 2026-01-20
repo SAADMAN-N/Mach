@@ -338,6 +338,7 @@ mach/
 - Meeting transcription and analysis
 
 **Known Issues**
+- Database field typo: `deletdAt` should be `deletedAt` (to be fixed)
 - No pagination for commits/questions (could be slow for large datasets)
 - Polling every 4 seconds for meeting status (should use WebSockets)
 - GitHub tokens stored in plaintext (should be encrypted)
