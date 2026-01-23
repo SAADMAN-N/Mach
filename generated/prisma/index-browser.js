@@ -139,7 +139,7 @@ exports.Prisma.ProjectScalarFieldEnum = {
   projectName: 'projectName',
   githubUrl: 'githubUrl',
   githubToken: 'githubToken',
-  deletdAt: 'deletdAt'
+  deletedAt: 'deletedAt'
 };
 
 exports.Prisma.UserToProjectScalarFieldEnum = {
@@ -204,6 +204,14 @@ exports.Prisma.IssueScalarFieldEnum = {
   meetingId: 'meetingId'
 };
 
+exports.Prisma.StripeTransactionScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId',
+  credits: 'credits'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -243,7 +251,8 @@ exports.Prisma.ModelName = {
   SourceCodeEmbedding: 'SourceCodeEmbedding',
   Question: 'Question',
   Meeting: 'Meeting',
-  Issue: 'Issue'
+  Issue: 'Issue',
+  StripeTransaction: 'StripeTransaction'
 };
 
 /**
