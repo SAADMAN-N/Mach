@@ -3,6 +3,7 @@
  * for Docker builds.
  */
 import "./src/env.js";
+const { PrismaPlugin } = require('@prisma/engines')
 
 
 /** @type {import("next").NextConfig} */
