@@ -71,6 +71,7 @@ const CreatePage = () => {
                 required: "Project Name is required",
               })}
               placeholder="Project Name"
+              id="projectname-guide"
             />
             <div className="h-2"></div>
 
@@ -78,11 +79,13 @@ const CreatePage = () => {
               {...register("repoUrl", { required: true })}
               placeholder="GitHub URL"
               type="url"
+              id="githuburl-guide"
             />
             <div className="h-2"></div>
             <Input
               {...register("githubToken")}
               placeholder="GitHub Token (optional)"
+              id="githubtoken-guide"
             />
             {!!checkCredits.data && (<>
               <div className="mt-4 bg-orange-50 px-4 rounded-md border border-orange-200 text-orange-700">

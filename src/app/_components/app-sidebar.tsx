@@ -26,6 +26,63 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
+
+
+const driverObj = driver({
+  showProgress: true,
+  steps: [{
+    element: '#sidebar-guide',
+    popover: {
+      title: 'This is the sidebar',
+      description: 'You can find all your projects in here as well as access your Q&A, Meetings and the Billing page',
+    },
+  },
+  {
+    element: '#sidebarlinks-guide',
+    popover: {
+      title: 'This is your application tab',
+      description: 'You can find all your sidebar links in here. Access your Q&A, Meetings and the Billing page',
+    },
+  },
+  {
+    element: '#projects-guide',
+    popover: {
+      title: 'This is the projects section',
+      description: 'You can find all your projects in here as well as create new ones',
+    },
+  },
+  {
+    element: '#create-project-guide',
+    popover: {
+      title: 'Create a new project by clicking on the button below',
+      description: "All you need is a GitHub repository URL and a GitHub token (optional)",
+    },
+  },
+  {
+    element: '#projectname-guide',
+    popover: {
+      title: 'Enter your project name',
+    },
+  },
+  {
+    element: '#githuburl-guide',
+    popover: {
+      title: 'Link your GitHub repository to your project',
+    },
+  },
+  {
+    element: '#githubtoken-guide',
+    popover: {
+      title: 'Enter your GitHub token (optional)',
+    },
+  },
+  ],
+});
+
+driverObj.drive();
+
 const items = [
   { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
   { title: "Q&A", url: "/qa", icon: Drone },
@@ -38,18 +95,18 @@ export function AppSidebar() {
   const { open } = useSidebar();
   const { projects, projectId, setProjectId } = useProject();
   return (
-    <Sidebar collapsible="icon" variant="floating">
-      <SidebarHeader>
+    <Sidebar collapsible="icon" variant="floating" >
+      <SidebarHeader >
         <div className="flex items-center gap-2">
           <Image src={"/mach.svg"} alt="logo" width={40} height={40} />
           {open && <h1 className="text-primary/80 text-xl font-bold">Mach</h1>}
         </div>
       </SidebarHeader>
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+      <SidebarContent id="sidebar-guide">
+        <SidebarGroup id="sidebarlinks-guide">
+          <SidebarGroupLabel >Application</SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu >
               {items.map((item) => {
                 return (
                   <SidebarMenuItem key={item.title}>
@@ -69,10 +126,10 @@ export function AppSidebar() {
               })}
             </SidebarMenu>
           </SidebarGroupContent>
-        </SidebarGroup>
-        <SidebarGroup>
-          <SidebarGroupLabel>Your Projects</SidebarGroupLabel>
-          <SidebarGroupContent>
+        </SidebarGroup >
+        <SidebarGroup id="projects-guide">
+          <SidebarGroupLabel >Your Projects</SidebarGroupLabel>
+          <SidebarGroupContent >
             <SidebarMenu>
               {projects?.map((project) => {
                 return (
@@ -103,7 +160,7 @@ export function AppSidebar() {
               {open && (
                 <SidebarMenuItem>
                   <Link href={"/create"}>
-                    <Button size="sm" variant={"outline"} className="w-fit">
+                    <Button size="sm" variant={"outline"} className="w-fit" id="create-project-guide">
                       <Plus />
                       Create Project
                     </Button>

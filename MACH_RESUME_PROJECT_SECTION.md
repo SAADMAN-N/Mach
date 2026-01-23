@@ -1,23 +1,20 @@
 # Mach - Resume Project Section
 
-## Recommended Project Entry
+## Finalized Version
 
-**Mach** | Next.js 15, React 19, tRPC, Prisma, PostgreSQL, pgvector, Clerk Auth, OpenRouter API, AssemblyAI, Firebase, TypeScript, Tailwind CSS | [Date Range]
+**Mach** | Next.js, React, tRPC, PostgreSQL, Prisma, TypeScript, LangChain, Tailwind | Nov. 2025 – Jan. 2026
 
-- Architected a full-stack AI-powered codebase intelligence platform using Next.js 15 App Router and tRPC to enable semantic code search through 768-dimensional vector embeddings, reducing codebase onboarding time by enabling developers to query complex repositories in natural language
-- Engineered a scalable vector similarity search system using PostgreSQL's pgvector extension and Google Gemini embeddings, implementing cosine distance algorithms to retrieve top 10 most relevant code files with 0.5 similarity threshold for context-aware AI responses
-- Developed an automated GitHub repository indexing pipeline using LangChain's recursive document loader to process entire codebases, generating AI-powered summaries for each file and storing embeddings for real-time semantic search capabilities
-- Built a real-time meeting analysis system integrating AssemblyAI's auto-chapters API to transcribe audio recordings and extract actionable insights, automatically categorizing meeting discussions into structured issues with time-coded summaries
-- Implemented an intelligent commit tracking system that fetches Git diffs via GitHub API and uses OpenRouter's LLM models to generate concise, bullet-point summaries of code changes, enabling teams to understand project evolution at a glance
-- Designed a type-safe, end-to-end API architecture using tRPC with 11 protected procedures and React Query integration, ensuring type safety from database to frontend while eliminating API route boilerplate
-- Created a collaborative project management system with team invitation workflows, soft-delete archiving, and multi-user project access, enabling seamless codebase collaboration across development teams
+• Architected a full-stack AI-powered codebase intelligence platform using Next.js 15 and tRPC, enabling semantic code search through 768-dimensional vector embeddings for natural language queries across complex repositories
+• Engineered scalable vector similarity search using PostgreSQL pgvector and Google Gemini embeddings, retrieving top 10 code files via cosine distance algorithms for context-aware AI responses
+• Developed automated GitHub repository indexing using LangChain to process entire codebases, generating AI-powered file summaries and storing embeddings for real-time semantic search
+• Built meeting analysis system integrating AssemblyAI auto-chapters API to transcribe recordings and extract structured insights, categorizing discussions into time-coded issue summaries
 
 ---
 
-## LaTeX Formatted Version (Condensed for 1-Page Resume)
+## LaTeX Formatted Version
 
 \resumeProjectHeading
-          {\textbf{Mach - AI Codebase Intelligence} $|$ \emph{Next.js 15, React 19, tRPC, Prisma, PostgreSQL, pgvector, Clerk Auth, OpenRouter API, AssemblyAI, Firebase, TypeScript, Tailwind CSS}}{[Date Range]}
+          {\textbf{Mach} $|$ \emph{Next.js, React, tRPC, PostgreSQL, Prisma, TypeScript, LangChain, Tailwind}}{Nov. 2025 -- Jan. 2026}
           \resumeItemListStart
             \resumeItem{Architected a full-stack AI-powered codebase intelligence platform using \textbf{Next.js 15} and \textbf{tRPC}, enabling semantic code search through \textbf{768-dimensional vector embeddings} for natural language queries across complex repositories}
             \resumeItem{Engineered scalable \textbf{vector similarity search} using \textbf{PostgreSQL pgvector} and \textbf{Google Gemini embeddings}, retrieving top \textbf{10 code files} via \textbf{cosine distance} algorithms for context-aware AI responses}
@@ -27,60 +24,83 @@
 
 ---
 
-## Ultra-Condensed Version (3 Bullets - Use if Space is Very Limited)
+## Should You Mention "RAG"?
 
-\resumeProjectHeading
-          {\textbf{Mach - AI Codebase Intelligence} $|$ \emph{Next.js 15, React 19, tRPC, Prisma, PostgreSQL, pgvector, Clerk Auth, OpenRouter API, AssemblyAI, Firebase, TypeScript, Tailwind CSS}}{[Date Range]}
-          \resumeItemListStart
-            \resumeItem{Architected a full-stack AI-powered codebase intelligence platform using \textbf{Next.js 15} and \textbf{tRPC}, implementing semantic code search through \textbf{768-dimensional vector embeddings} with \textbf{PostgreSQL pgvector} to enable natural language queries across complex repositories}
-            \resumeItem{Engineered scalable \textbf{vector similarity search} using \textbf{Google Gemini embeddings} and \textbf{cosine distance algorithms}, retrieving top \textbf{10 code files} for context-aware AI responses, plus automated \textbf{GitHub repository indexing} via \textbf{LangChain}}
-            \resumeItem{Built meeting analysis system integrating \textbf{AssemblyAI auto-chapters API} for transcription and structured insight extraction, and implemented type-safe API architecture with \textbf{11 protected tRPC procedures} using \textbf{React Query} integration}
-          \resumeItemListEnd
+### Short Answer: **Not necessary, but could be valuable**
+
+### Analysis:
+
+**Arguments FOR mentioning RAG:**
+- It's a highly sought-after keyword in AI/ML roles
+- Shows you understand the architecture pattern, not just implementation
+- ATS systems will pick it up
+- Technical recruiters/hiring managers recognize it as advanced knowledge
+
+**Arguments AGAINST mentioning RAG:**
+- Your bullets already describe RAG concepts (vector embeddings, semantic search, context retrieval)
+- Non-technical recruiters might not know what it means
+- Space is limited - every word counts
+- You're already demonstrating RAG knowledge through the description
+
+### Recommendation:
+
+**Option 1: Keep as-is (Recommended)**
+Your current version is strong. You're describing RAG without using the term, which shows understanding without jargon. This works well for both technical and non-technical readers.
+
+**Option 2: Add RAG subtly (If you want the keyword)**
+If you want to include "RAG" for ATS/keyword purposes, you could modify the first bullet:
+
+```
+• Architected a full-stack AI-powered codebase intelligence platform using Next.js 15 and tRPC, implementing RAG (Retrieval Augmented Generation) architecture with 768-dimensional vector embeddings for semantic code search and natural language queries across complex repositories
+```
+
+**Option 3: Add to tech stack (Minimal impact)**
+You could add it to the tech stack header, but it's less impactful there:
+```
+Mach | Next.js, React, tRPC, PostgreSQL, Prisma, TypeScript, LangChain, Tailwind, RAG | Nov. 2025 – Jan. 2026
+```
+
+### My Take:
+
+**Keep it as-is.** Your description already demonstrates RAG knowledge:
+- "vector embeddings" = retrieval component
+- "semantic code search" = retrieval mechanism  
+- "natural language queries" = generation component
+- "context-aware AI responses" = augmented generation
+
+You're showing you understand RAG without needing to name it. This is actually better because:
+1. It's more accessible to all readers
+2. You're demonstrating understanding, not just keyword matching
+3. Technical interviewers will recognize this as RAG from your description
+4. You save space for other impactful details
+
+If you're applying to very AI/ML-focused roles, you could add it, but for general software engineering positions, your current version is perfect.
 
 ---
 
-## Key Technical Highlights to Mention in Interviews
+## Key Strengths of Your Finalized Version:
 
-### Vector Search & AI Integration
-- **pgvector** with 768-dimensional embeddings (Gemini embedding-001)
-- Cosine similarity search: `1 - (embedding <=> query) > 0.5`
-- Top-K retrieval (K=10) for context building
-- Streaming AI responses using OpenRouter SDK
-
-### Architecture Patterns
-- **tRPC** for end-to-end type safety (no API route definitions needed)
-- **Server Components** by default, Client Components only when needed
-- **React Query** for server state management
-- **Protected procedures** with Clerk authentication middleware
-
-### Scalability Features
-- Parallel processing with `Promise.allSettled` for error resilience
-- Recursive repository indexing with configurable concurrency (max 5)
-- Soft deletes for data retention
-- Background job processing for meeting transcription
-
-### Code Quality
-- TypeScript strict mode with `noUncheckedIndexedAccess`
-- Zod validation for runtime type safety
-- Custom React hooks (`useProject`, `useRefetch`, `useIsMobile`)
-- Comprehensive error handling and graceful degradation
+1. **Concise tech stack** - Only essential technologies listed
+2. **Strong action verbs** - Architected, Engineered, Developed, Built
+3. **Specific metrics** - 768 dimensions, top 10 files, cosine distance
+4. **Clear value proposition** - Each bullet shows what you built and why it matters
+5. **No redundancy** - Each bullet covers a distinct aspect
+6. **ATS-friendly** - Contains relevant keywords (vector embeddings, pgvector, semantic search, etc.)
 
 ---
 
-## Formatting Notes
+## Interview Talking Points (Based on Your Finalized Version):
 
-- Match the exact format of your other projects (tech stack in header, date range)
-- Use strong action verbs: Architected, Engineered, Developed, Built, Implemented, Designed, Created
-- Include specific technologies and numbers where possible (768 dimensions, top 10 files, 0.5 threshold)
-- Focus on technical depth and problem-solving, not just features
-- Quantify impact when possible (e.g., "reducing onboarding time")
+When asked about this project, you can discuss:
 
----
+**RAG Architecture:**
+- "I implemented a RAG system where I retrieve relevant code files using vector similarity search, then augment the LLM's context with those files to generate accurate answers about the codebase."
 
-## References for Best Practices
+**Vector Search:**
+- "I used 768-dimensional embeddings from Google Gemini, stored in PostgreSQL with pgvector extension, and used cosine distance to find semantically similar code files."
 
-Based on industry standards for computer science resume project sections:
-- **Action-Context-Result Framework**: Start with action verb, describe technical context, state impact
-- **Technical Depth**: Mention specific patterns (vector embeddings, cosine similarity, pgvector)
-- **Quantification**: Include metrics (768 dimensions, top 10 files, similarity thresholds)
-- **Problem-Solving Focus**: Explain *why* technologies were chosen (type safety, scalability, performance)
+**Why tRPC:**
+- "I chose tRPC for end-to-end type safety - it eliminated the need to write separate API routes and ensured type safety from database to frontend."
+
+**Scalability:**
+- "The system processes entire repositories in parallel, generating embeddings and summaries for each file, enabling real-time semantic search across large codebases."
