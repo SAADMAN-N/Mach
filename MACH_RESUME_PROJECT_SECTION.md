@@ -13,6 +13,7 @@
 
 ## LaTeX Formatted Version
 
+
 \resumeProjectHeading
           {\textbf{Mach} $|$ \emph{Next.js, React, tRPC, PostgreSQL, Prisma, TypeScript, LangChain, Tailwind}}{Nov. 2025 -- Jan. 2026}
           \resumeItemListStart
