@@ -17,7 +17,10 @@ const MeetingsPage = () => {
   const { data: meetings } = api.project.getMeetings.useQuery(
     { projectId },
     {
-      refetchInterval: 4000,
+      refetchInterval: (query) =>
+        query.state.data?.some((m) => m.status === "PROCESSING")
+          ? 2000
+          : false,
     },
   );
   return (
