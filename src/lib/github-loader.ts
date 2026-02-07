@@ -10,8 +10,9 @@ export const loadGithubRepo = async (
   githubUrl: string,
   githubToken?: string,
 ) => {
+  const token = githubToken || process.env.GITHUB_TOKEN || "";
   const loader = new GithubRepoLoader(githubUrl, {
-    accessToken: githubToken || "",
+    accessToken: token,
     branch: "main",
     ignoreFiles: [
       "package-lock.json",
@@ -124,7 +125,8 @@ const getFileCount = async (path: string, octokit: Octokit, githubOwner: string,
 }
 
 export const checkCredits = async (githubUrl: string, githubToken?: string) => {
-  const octokit = new Octokit({ auth: githubToken })
+  const token = githubToken || process.env.GITHUB_TOKEN;
+  const octokit = new Octokit({ auth: token })
   const githubOwner = githubUrl.split('/')[3]
   const githubRepo = githubUrl.split('/')[4]
   if (!githubOwner || !githubRepo) { return 0 }
