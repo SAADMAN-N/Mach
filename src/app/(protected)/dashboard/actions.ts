@@ -36,7 +36,7 @@ export async function askQuestions(question: string, projectId: string) {
   (async () => {
     try {
       const streamResponse = await mimo.chat.send({
-        model: "xiaomi/mimo-v2-flash:free",
+        model: "google/gemini-3-flash-preview",
         messages: [
           {
             role: "user",

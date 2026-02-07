@@ -1,10 +1,11 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import useProject from "@/hooks/use-project";
 import useRefetch from "@/hooks/use-refetch";
 import { api } from "@/trpc/react";
 import { Info } from "lucide-react";
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -16,6 +17,8 @@ type FormInput = {
 };
 
 const CreatePage = () => {
+  const router = useRouter()
+  const { setProjectId } = useProject()
   const { register, handleSubmit, reset } = useForm<FormInput>();
   const createProject = api.project.createProject.useMutation();
   const checkCredits = api.project.checkCredits.useMutation();
@@ -30,10 +33,12 @@ const CreatePage = () => {
           githubToken: data.githubToken,
         },
         {
-          onSuccess: () => {
+          onSuccess: (newProject) => {
             toast.success("Project created successfully");
+            setProjectId(newProject.id)
             refetch();
             reset();
+            router.push("/dashboard")
           },
           onError: () => {
             toast.error("Failed to create project");
@@ -71,7 +76,6 @@ const CreatePage = () => {
                 required: "Project Name is required",
               })}
               placeholder="Project Name"
-              id="projectname-guide"
             />
             <div className="h-2"></div>
 
@@ -79,13 +83,11 @@ const CreatePage = () => {
               {...register("repoUrl", { required: true })}
               placeholder="GitHub URL"
               type="url"
-              id="githuburl-guide"
             />
             <div className="h-2"></div>
             <Input
               {...register("githubToken")}
               placeholder="GitHub Token (optional)"
-              id="githubtoken-guide"
             />
             {!!checkCredits.data && (<>
               <div className="mt-4 bg-orange-50 px-4 rounded-md border border-orange-200 text-orange-700">

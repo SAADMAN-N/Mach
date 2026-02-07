@@ -11,7 +11,8 @@ const embeddingAI = new GoogleGenAI({});
 
 export const aiSummarizeCommit = async (diff: string) => {
   const response = await genAI.chat.send({
-    model: "xiaomi/mimo-v2-flash:free",
+    // model: "xiaomi/mimo-v2-flash:free",
+    model: "google/gemini-3-flash-preview",
     messages: [
       {
         role: "user",
@@ -67,7 +68,7 @@ export async function summarizeCode(doc: Document) {
   try {
     const code = doc.pageContent.slice(0, 10000); //limit to first 10000 characters
     const response = await genAI.chat.send({
-      model: "xiaomi/mimo-v2-flash:free",
+      model: "google/gemini-3-flash-preview",
       messages: [
         {
           role: "user",

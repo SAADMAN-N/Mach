@@ -3,17 +3,16 @@
  * for Docker builds.
  */
 import "./src/env.js";
-const { PrismaPlugin } = require('@prisma/engines')
-
+// const { PrismaPlugin } = require('@prisma/nextjs-monorepo-workaround-plugin')
 
 /** @type {import("next").NextConfig} */
 const config = {
-    eslint:{
-        ignoreDuringBuilds:true
-    },
-    typescript:{
-        ignoreBuildErrors:true
-    }
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default config;

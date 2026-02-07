@@ -25,8 +25,6 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
-import "driver.js/dist/driver.css";
 
 const items = [
   { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
@@ -40,67 +38,6 @@ export function AppSidebar() {
   const { open } = useSidebar();
   const { projects, projectId, setProjectId } = useProject();
 
-  useEffect(() => {
-    // Only run driver.js on the client side
-    if (typeof window === "undefined") return;
-
-    // Dynamically import driver.js to avoid SSR issues
-    import("driver.js").then(({ driver }) => {
-      const driverObj = driver({
-        showProgress: true,
-        steps: [{
-          element: '#sidebar-guide',
-          popover: {
-            title: 'This is the sidebar',
-            description: 'You can find all your projects in here as well as access your Q&A, Meetings and the Billing page',
-          },
-        },
-        {
-          element: '#sidebarlinks-guide',
-          popover: {
-            title: 'This is your application tab',
-            description: 'You can find all your sidebar links in here. Access your Q&A, Meetings and the Billing page',
-          },
-        },
-        {
-          element: '#projects-guide',
-          popover: {
-            title: 'This is the projects section',
-            description: 'You can find all your projects in here as well as create new ones',
-          },
-        },
-        {
-          element: '#create-project-guide',
-          popover: {
-            title: 'Create a new project by clicking on the button below',
-            description: "All you need is a GitHub repository URL and a GitHub token (optional)",
-          },
-        },
-        {
-          element: '#projectname-guide',
-          popover: {
-            title: 'Enter your project name',
-          },
-        },
-        {
-          element: '#githuburl-guide',
-          popover: {
-            title: 'Link your GitHub repository to your project',
-          },
-        },
-        {
-          element: '#githubtoken-guide',
-          popover: {
-            title: 'Enter your GitHub token (optional)',
-          },
-        },
-        ],
-      });
-
-      driverObj.drive();
-    });
-  }, []);
-
   return (
     <Sidebar collapsible="icon" variant="floating" >
       <SidebarHeader >
@@ -109,8 +46,8 @@ export function AppSidebar() {
           {open && <h1 className="text-primary/80 text-xl font-bold">Mach</h1>}
         </div>
       </SidebarHeader>
-      <SidebarContent id="sidebar-guide">
-        <SidebarGroup id="sidebarlinks-guide">
+      <SidebarContent>
+        <SidebarGroup>
           <SidebarGroupLabel >Application</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu >
@@ -134,7 +71,7 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup >
-        <SidebarGroup id="projects-guide">
+        <SidebarGroup>
           <SidebarGroupLabel >Your Projects</SidebarGroupLabel>
           <SidebarGroupContent >
             <SidebarMenu>
@@ -167,7 +104,7 @@ export function AppSidebar() {
               {open && (
                 <SidebarMenuItem>
                   <Link href={"/create"}>
-                    <Button size="sm" variant={"outline"} className="w-fit" id="create-project-guide">
+                    <Button size="sm" variant={"outline"} className="w-fit">
                       <Plus />
                       Create Project
                     </Button>

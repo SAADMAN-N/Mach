@@ -55,7 +55,7 @@ const AskQuestionCard = () => {
   return (
     <>
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-[80vw]">
+        <DialogContent className="sm:max-w-[80vw] max-h-[calc(100vh-4rem)] overflow-y-auto">
           <DialogHeader>
             <div className="flex items-center gap-2">
               <DialogTitle>
@@ -105,7 +105,7 @@ const AskQuestionCard = () => {
             onClick={() => {
               setOpen(false);
             }}
-          ></Button>
+          >Close</Button>
         </DialogContent>
       </Dialog>
 
